@@ -289,7 +289,7 @@ function App() {
   };
 
   const handleLogin = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     setInvalidUserError(false);
 
     axios.post("http://localhost:8000/users/login", {
@@ -312,15 +312,13 @@ function App() {
   };
 
   const handleLogOut = (e) => {
-    // e.preventDefault();
     console.log("logout");
 
     axios.delete("http://localhost:8000/users/login", {
       headers: {
         "authorization": "Bearer " + loggedInUser.accessToken
       },
-      username: loggedInUser.user.username,
-      // password: loggedInUser.user.password
+      username: loggedInUser.user.username
     }).then((res) => {
       console.log("deleted");
       localStorage.removeItem("loggedInUser");
