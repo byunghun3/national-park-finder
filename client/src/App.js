@@ -304,6 +304,7 @@ function App() {
       setShowLoginModal(false);
       document.body.style.overflow = "visible";
       document.getElementById("overlay").style.display = "none";
+      window.location.reload();
     }).catch((err) => {
       if (err.response.data === "Invalid username or password") {
         setInvalidUserError(true);
@@ -312,15 +313,11 @@ function App() {
   };
 
   const handleLogOut = (e) => {
-    console.log("logout");
+    e.preventDefault();
 
     axios.delete("http://localhost:8000/users/login", {
-      headers: {
-        "authorization": "Bearer " + loggedInUser.accessToken
-      },
       username: loggedInUser.user.username
     }).then((res) => {
-      console.log("deleted");
       localStorage.removeItem("loggedInUser");
       setName("");
       setUsername("");
@@ -328,6 +325,7 @@ function App() {
       setShowLoginModal(false);
       document.body.style.overflow = "visible";
       document.getElementById("overlay").style.display = "none";
+      window.location.reload();
     });
   };
 
