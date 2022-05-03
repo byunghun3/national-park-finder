@@ -90,8 +90,7 @@ router.post("/login", async (req, res) => {
 router.delete("/login", async (req, res) => {
     try {
         const userLogOut = await UserModel.remove({
-            username: req.body.username,
-            // password: req.body.password
+            username: req.body.username
         });
         res.status(200).json(userLogOut);
     } catch (err) {
