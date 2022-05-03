@@ -58,6 +58,7 @@ const ParkName = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 98%;
     margin-top: 1%;
     font-size: 2rem;
     font-weight: 700;
