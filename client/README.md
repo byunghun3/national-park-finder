@@ -71,6 +71,10 @@ I found a similar site, but it didn't have filtering by park type/designation, w
 
 This was my first time building a backend and a REST API. I learned how to build and connect a database with Mongoose/MongoDB, how to call and receive different HTTP requests between the REST API and frontend, and how to authenticate users with JWT and Express middleware function.
  
-I built the modals and grey background overlay from scratch. I only used MUI for Select components, because the HTML select element isn't the best.
+I got familiar with using MongoDB Atlas and Postman to get a visual for the database and test HTTP requests. 
+ 
+I built most of the UI from scratch, including the modals and grey background overlay. I only used MUI for Select components, because the HTML select element isn't the best.
+
+An improvement to user authentication I could add in the future is generating refresh tokens and storing in Redis, so that I can set an expiration time at login for better security.
 
 For the next project, I want to learn and use Next.js to build an app.
