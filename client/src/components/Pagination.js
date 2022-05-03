@@ -8,7 +8,7 @@ const PageNumbers = styled.div`
     margin: 1vh 0 4vh 0;
 
     @media (max-width: 775px) {
-        margin-top: 3vh;
+        margin-top: 4vh;
     }
 `;
 
