@@ -18,6 +18,7 @@ This project was created with:
 * Node.js
 * Express.js
 * Mongoose/MongoDB
+* JSON Web Token (JWT)
 * Styled-components
 * Material UI
 * ESLint
@@ -59,19 +60,17 @@ Clicking on the Details button opens a modal with more info on each park. It con
 Saved parks have red hearts for indication.
 
 
+
 ## Reflection
 
-My goal for this project was to build an app to introduce my web development journey and display my profile and projects.
+My goal for this project was to build a full-stack app using Node, Express, MongoDB for backend.
 
-I also treated this project as further practice for developing React apps.  
+A friend gave me the idea for the project, saying that it's something they would use.
 
-I paid particular attention to visual or styling details for this single-page app. Upon clicking any of the three hash links ("Projects" and "Story" in navbar, and "Back to Top" at the bottom of the page) and navigating to each section, I called the history.pushState() method to remove any added hash text from the URL. 
+I found a similar site, but it didn't have filtering by park type/designation, which I envisioned to be a crucial part of my app.
 
-I was also careful with how I handled the scroll snap with responsiveness in mind, making sure that when the window size shrank, the snap didn't hide any content.   
+This was my first time building a backend and a REST API. I learned how to build and connect a database with Mongoose/MongoDB, how to call and receive different HTTP requests between the REST API and frontend, and how to authenticate users with JWT and Express middleware function.
+ 
+I built the modals and grey background overlay from scratch. I only used MUI for Select components, because the HTML select element isn't the best.
 
-Because adding tests at the end had me incorporating aria-labels to some elements, it got me thinking more about using them more often for both testing, SEO, and accessibility purposes. This will be an important skill to develop for my professional career.
-
-This being my third React project, I reazlied how much more proficient and efficient with React and other complementary libraries I've become. 
-
-For the next project, I want to learn about incorporating a back end with Node.js. Another long-term goal is to learn and use Next.js to build an app.
-![image](https://user-images.githubusercontent.com/74752059/166394692-72e2b341-2e4d-4d2f-8ae1-69789848eef0.png)
+For the next project, I want to learn and use Next.js to build an app.
