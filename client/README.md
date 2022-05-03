@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# National Park Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app helps you find the 466 parks registered under the National Park Service by name, type of park, activities, and states the park is located in. 
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://byunghun3.github.io/national-park-finder/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
 
-### `npm run build`
+This project was created with:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* React.js
+* Node.js
+* Express.js
+* Mongoose/MongoDB
+* Styled-components
+* Material UI
+* ESLint
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You can either use the default account below or sign up with a new account to save/heart favorite parks to your account.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Username: byunghun3@gmail.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Password: byunghun3
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![npf-main](./src/assets/images/national-park-finder-main.png)
 
-## Learn More
+In the top right corner, the account icon takes you to the login or the profile page, depending on the login status.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The search section contains 3 filters by activities that the park offers, states that the park is located in, and the type of park designation under NPS. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+There's a search bar where you can search parks by name, activities that are not included in the activities filter (i.e., Park Film or Snow Play), or a more specific activity (i.e., Back Country Camping vs RV Camping).
 
-### Code Splitting
+There's also a checkbox for filtering hearted parks saved to your account. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+![npf-search](./src/assets/images/national-park-finder-search-result.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The search results include basic info about name, states, park type of each filtered park. Each park card also contains a button to show more details and a heart button to save the park to your account (only when logged in).
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![npf-details1](./src/assets/images/national-park-finder-details-1.png)
+![npf-details2](./src/assets/images/national-park-finder-details-2.png)
 
-### Advanced Configuration
+Clicking on the Details button opens a modal with more info on each park. It contains a link to the official park website, and buttons to expand additional info on all the listed activities, operating hours, and weather tips for visiting. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+![npf-saved](./src/assets/images/national-park-finder-saved.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Saved parks have red hearts for indication.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Reflection
+
+My goal for this project was to build an app to introduce my web development journey and display my profile and projects.
+
+I also treated this project as further practice for developing React apps.  
+
+I paid particular attention to visual or styling details for this single-page app. Upon clicking any of the three hash links ("Projects" and "Story" in navbar, and "Back to Top" at the bottom of the page) and navigating to each section, I called the history.pushState() method to remove any added hash text from the URL. 
+
+I was also careful with how I handled the scroll snap with responsiveness in mind, making sure that when the window size shrank, the snap didn't hide any content.   
+
+Because adding tests at the end had me incorporating aria-labels to some elements, it got me thinking more about using them more often for both testing, SEO, and accessibility purposes. This will be an important skill to develop for my professional career.
+
+This being my third React project, I reazlied how much more proficient and efficient with React and other complementary libraries I've become. 
+
+For the next project, I want to learn about incorporating a back end with Node.js. Another long-term goal is to learn and use Next.js to build an app.
+![image](https://user-images.githubusercontent.com/74752059/166394692-72e2b341-2e4d-4d2f-8ae1-69789848eef0.png)
