@@ -33,7 +33,7 @@ Username: byunghun3@gmail.com
 
 Password: byunghun3
 
-![npf-main](./src/assets/images/national-park-finder-main.png)
+![national-park-finder-main](https://user-images.githubusercontent.com/74752059/166565692-6615c7a1-83b8-4666-8860-a5d7910445ea.png)
 
 In the top right corner, the account icon takes you to the login or the profile page, depending on the login status.
 
@@ -44,18 +44,18 @@ There's a search bar where you can search parks by name, activities that are not
 There's also a checkbox for filtering hearted parks saved to your account. 
 
 
-![npf-search](./src/assets/images/national-park-finder-search-result.png)
+![national-park-finder-search-result](https://user-images.githubusercontent.com/74752059/166619239-a4ef59d0-508e-4e73-a2a1-82fd7b4f020e.png)
 
 The search results include basic info about name, states, park type of each filtered park. Each park card also contains a button to show more details and a heart button to save the park to your account (only when logged in).
 
 
-![npf-details1](./src/assets/images/national-park-finder-details-1.png)
-![npf-details2](./src/assets/images/national-park-finder-details-2.png)
+![national-park-finder-details-1](https://user-images.githubusercontent.com/74752059/166619327-789167fb-2011-4512-8086-aa6fcd27489d.png)
+![national-park-finder-details-2](https://user-images.githubusercontent.com/74752059/166619330-efb0d7ef-40ef-4e3a-9d32-3cf9a0f320be.png)
 
 Clicking on the Details button opens a modal with more info on each park. It contains a link to the official park website, and buttons to expand additional info on all the listed activities, operating hours, and weather tips for visiting. 
 
 
-![npf-saved](./src/assets/images/national-park-finder-saved.png)
+![national-park-finder-saved](https://user-images.githubusercontent.com/74752059/166619345-7ac5b1ae-0c65-40b7-9672-58cbbd9d7c1a.png)
 
 Saved parks have red hearts for indication.
 
