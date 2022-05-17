@@ -174,7 +174,7 @@ const DetailsImg = styled.img`
     object-fit: cover;
     object-position: 50% 25%;    
     height: 60rem;
-    width: 58.5rem;
+    width: 60rem;
 
     @media (max-width: 499px) {
         width: 90vw;
