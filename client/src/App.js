@@ -332,10 +332,10 @@ function App() {
   const handleSearchByName = (e) => {
     setSearchValue(e.target.value);
     setIsLoading(true);
-
     setTimeout(() => {
       setIsLoading(false);
     }, 1);
+    setCurrentPage(1);
 
     axios.get(`${API.url}${API.key}`)
       .then(res => {
