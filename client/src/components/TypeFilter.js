@@ -11,13 +11,11 @@ export const TypeFilter = ({ value, onChange }) => {
           width: "35rem"
         },
         "@media (max-width: 775px)": {
+          width: "70%",
           marginBottom: "5%"
         },
-        "@media (max-width: 370px)": {
-          width: "30rem"
-        },
-        "@media (max-width: 310px)": {
-          width: "25rem"
+        "@media (max-width: 499px)": {
+          width: "85%"
         }
       }}
     >

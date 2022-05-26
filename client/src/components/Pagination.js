@@ -5,10 +5,10 @@ const PageNumbers = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1vh 0 4vh 0;
+    margin: 1rem 0 4rem 0;
 
     @media (max-width: 775px) {
-        margin-top: 4vh;
+        margin: 2rem 0 4rem;
     }
 `;
 

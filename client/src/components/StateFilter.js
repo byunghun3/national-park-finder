@@ -13,13 +13,11 @@ export const StateFilter = ({ value, onChange }) => {
                         width: "35rem"
                     },
                     "@media (max-width: 775px)": {
+                        width: "70%",
                         marginTop: "1.5%"
                     },
-                    "@media (max-width: 370px)": {
-                        width: "30rem"
-                    },
-                    "@media (max-width: 310px)": {
-                        width: "25rem"
+                    "@media (max-width: 499px)": {
+                        width: "85%"
                     }
                 }}
             >

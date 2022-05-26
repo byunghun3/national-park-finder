@@ -18,7 +18,7 @@ const HeaderSection = styled.div`
   justify-content: space-between;
   align-items: center;
   min-height: 7vh;
-  width: 99%;
+  width: 100%;
 `;
 
 const Title = styled.div`
@@ -38,12 +38,16 @@ const Title = styled.div`
     font-size: 2.8rem;
   }  
 
-  @media (max-width: 380px) {
+  @media (max-width: 400px) {
     font-size: 2.3rem;
   }  
 
-  @media (max-width: 310px) {
+  @media (max-width: 325px) {
     font-size: 2rem;
+  }  
+
+  @media (max-width: 279px) {
+    font-size: 1.7rem;
   }  
 `;
 
@@ -93,6 +97,10 @@ const SearchSection = styled.div`
   min-height: 20vh;
   width: 100%;
   background-color: brown;
+
+  @media (max-width: 500px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const LoaderSection = styled.div`
@@ -136,7 +144,8 @@ const ParkSection = styled.div`
 const ParkQtyText = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 2%;
+  // margin-top: 2%;
+  margin: 2rem 0;
   font-size: 1.8rem;
 `;
 
@@ -145,7 +154,7 @@ const ParkContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 8rem;
   width: auto;
-  margin: 2% 0 3.5% 0;
+  margin: 3rem 0 3.5rem 0;
 
   @media (max-width: 1320px) {
     grid-gap: 4rem;
@@ -158,6 +167,10 @@ const ParkContainer = styled.div`
 
   @media (max-width: 875px) {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 499px) {
+    grid-gap: 4rem;
   }
 `;
 

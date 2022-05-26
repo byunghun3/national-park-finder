@@ -21,16 +21,21 @@ const SearchInput = styled.input`
     }
 
     @media (max-width: 775px) {
+        width: 70%;
         margin-bottom: 5%;
     }
 
-    @media (max-width: 370px) {
-        width: 30rem;
+    @media (max-width: 499px) {
+        width: 85%;
     }
 
-    @media (max-width: 310px) {
-        width: 25rem;
-    }
+    // @media (max-width: 370px) {
+    //     width: 30rem;
+    // }
+
+    // @media (max-width: 310px) {
+    //     width: 25rem;
+    // }
 `;
 
 export const SearchBar = ({ value, onChange }) => {

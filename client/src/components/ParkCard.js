@@ -37,11 +37,7 @@ const Img = styled.img`
     object-fit: cover;
     object-position: 50% 25%;    
     height: 25rem;
-    width: 37rem;
-
-    @media (max-width: 499px) {
-        width: 90vw;
-    }
+    width: 100%;
 `;
 
 const ParkInfo = styled.div`
@@ -51,6 +47,10 @@ const ParkInfo = styled.div`
     align-items: center;
     height: 12.5rem;
     font-size: 1.7rem;
+
+    @media (max-width: 310px) {
+        min-height: 14rem;
+    }
 `;
 
 const ParkName = styled.div`
@@ -75,6 +75,7 @@ const ParkState = styled.div`
 `;
 
 const StateNames = styled.div`
+    flex: 33.33%;  
     display: flex;
 `;
 
@@ -164,6 +165,11 @@ const DetailsCard = styled.div`
     background: white;
     overflow-y: scroll;
 
+    @media (max-width: 700px) {
+        height: 80vh;
+        width: 80vw;
+    }
+
     @media (max-width: 499px) {
         height: 90vh;
         width: 90vw;
@@ -174,11 +180,7 @@ const DetailsImg = styled.img`
     object-fit: cover;
     object-position: 50% 25%;    
     height: 60rem;
-    width: 60rem;
-
-    @media (max-width: 499px) {
-        width: 90vw;
-    }
+    width: 100%;
 `;
 
 const DetailsParkInfo = styled.div`
@@ -194,7 +196,7 @@ const DetailsParkName = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2% 0 1.5% 0;
+    margin: 2rem 0 1rem 0;
     font-size: 2rem;
     font-weight: 700;
 `;
@@ -206,7 +208,7 @@ const DetailsParkState = styled.div`
     justify-content: center;
     align-items: center;
     width: 85%;
-    margin: 1.5% 0;
+    margin: 0.5rem 0;
     overflow-wrap: break-word;
 `;
 
@@ -214,17 +216,23 @@ const DetailsParkType = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1.5% 0;
+    margin: 1rem 0 2rem 0;
 `;
 
 const ParkDesc = styled.div`
-    margin: 2% 0;
+    margin: 1rem 0;
     text-align: justify;
     text-justify: inter-character;
+
+    @media (max-width: 399px) {
+        width: 90%;
+        margin: 2rem 0;
+        text-align: left;
+    }
 `;
 
 const ParkURL = styled.a`
-    margin: 2% 0 4% 0;
+    margin: 2rem 0 2rem 0;
     color: darkslategrey;
     text-decoration: none;
     font-family: "Prompt";
@@ -233,6 +241,10 @@ const ParkURL = styled.a`
 
     &:hover {
         color: maroon;
+    }
+
+    @media (max-width: 399px) {
+        margin: 2rem 0 4rem 0;
     }
 `;
 
@@ -252,11 +264,17 @@ const ExpandedContent = styled.div`
     text-align: justify;
     text-justify: inter-character;
     width: 100%;
-    margin: 1.5% 0 2.5% 0;
+    margin: 1.5rem 0 2.5rem 0;
+
+    @media (max-width: 425px) {
+        width: 90%;
+        margin: 2rem 0;
+        text-align: left;
+    }
 `;
 
 const CloseButton = styled.button`
-    margin: 5% 0 3% 0;
+    margin: 5rem 0 3rem 0;
     outline: black;
     background-color: white;
     font-family: "Prompt";
