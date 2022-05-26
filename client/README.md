@@ -71,7 +71,7 @@ I found a similar site, but it didn't have filtering by park type/designation, w
 
 This was my first time building a backend and a REST API. I learned how to build and connect a database with Mongoose/MongoDB, how to call and receive different HTTP requests between the REST API and frontend, and how to authenticate users with JWT and Express middleware function.
  
-I got familiar with using MongoDB Atlas and Postman to get a visual for the database and test HTTP requests. 
+I got familiar with using MongoDB Compass and Postman to get a visual for the database and test HTTP requests. 
  
 I built most of the UI from scratch, including the modals and grey background overlay. I only used MUI for Select components, because the HTML select element isn't the best.
 
