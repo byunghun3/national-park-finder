@@ -75,7 +75,6 @@ const ParkState = styled.div`
 `;
 
 const StateNames = styled.div`
-    flex: 33.33%;  
     display: flex;
 `;
 
