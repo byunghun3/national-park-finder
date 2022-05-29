@@ -16,6 +16,6 @@ app.use("/users", usersRouter);
 mongoose.connect(process.env.DB_URI);
 
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
     console.log("server running on port 8000");
 });
