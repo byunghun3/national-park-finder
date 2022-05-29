@@ -28,14 +28,6 @@ const SearchInput = styled.input`
     @media (max-width: 499px) {
         width: 85%;
     }
-
-    // @media (max-width: 370px) {
-    //     width: 30rem;
-    // }
-
-    // @media (max-width: 310px) {
-    //     width: 25rem;
-    // }
 `;
 
 export const SearchBar = ({ value, onChange }) => {

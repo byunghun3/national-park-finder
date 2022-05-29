@@ -144,7 +144,6 @@ const ParkSection = styled.div`
 const ParkQtyText = styled.div`
   display: flex;
   justify-content: center;
-  // margin-top: 2%;
   margin: 2rem 0;
   font-size: 1.8rem;
 `;
