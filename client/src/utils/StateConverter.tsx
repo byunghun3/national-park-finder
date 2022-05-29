@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 
-export const StateConverter = ({ stateCode }) => {
-    const renderStateName = (stateCode) => {
+interface StateConverterProps {
+    stateCode: string;
+}
+
+export const StateConverter: FC<StateConverterProps> = ({ stateCode }) => {
+    const renderStateName = (stateCode: string) => {
         switch (stateCode) {
             case "AL":
                 return "Alabama";

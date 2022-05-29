@@ -1,9 +1,22 @@
-import React from "react";
+import React, { FC } from "react";
+import { SelectChangeEvent } from "@mui/material";
 import { ActivityFilter } from "./ActivityFilter";
 import { TypeFilter } from "./TypeFilter";
 import { StateFilter } from "./StateFilter";
 import { SearchBar } from "./SearchBar";
 import styled from "styled-components";
+
+interface SearchFiltersProps {
+    searchValue: string;
+    onChangeSearch: React.ChangeEventHandler<HTMLInputElement>;
+    stateValue: string;
+    onChangeState: (e: SelectChangeEvent<string>, child: React.ReactNode) => void;
+    typeValue: string;
+    onChangeType: (e: SelectChangeEvent<string>, child: React.ReactNode) => void;
+    activityValue: string;
+    onChangeActivity: (e: SelectChangeEvent<string>, child: React.ReactNode) => void;
+    handleFilterBySavedParks: React.ChangeEventHandler<HTMLInputElement>;
+}
 
 const FilterContainer = styled.div`
     display: flex;
@@ -51,7 +64,7 @@ const SavedFilter = styled.input`
 `;
 
 
-export const SearchFilters = ({ searchValue, onChangeSearch, stateValue, onChangeState,
+export const SearchFilters: FC<SearchFiltersProps> = ({ searchValue, onChangeSearch, stateValue, onChangeState,
     typeValue, onChangeType, activityValue, onChangeActivity, handleFilterBySavedParks }) => {
     return (
         <FilterContainer>
@@ -78,10 +91,10 @@ export const SearchFilters = ({ searchValue, onChangeSearch, stateValue, onChang
                     value={typeValue}
                     onChange={onChangeType}
                 />
-            </Flex >
+            </Flex>
             <Checkbox>
                 <SavedFilter type="checkbox" onClick={handleFilterBySavedParks} /> Saved
             </Checkbox>
-        </FilterContainer >
+        </FilterContainer>
     );
 };

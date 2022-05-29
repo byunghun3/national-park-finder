@@ -1,5 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
+
+interface SearchBarProps {
+    value: string;
+    onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
 
 const SearchInput = styled.input`
     height: 5.5rem;
@@ -28,17 +33,9 @@ const SearchInput = styled.input`
     @media (max-width: 499px) {
         width: 85%;
     }
-
-    // @media (max-width: 370px) {
-    //     width: 30rem;
-    // }
-
-    // @media (max-width: 310px) {
-    //     width: 25rem;
-    // }
 `;
 
-export const SearchBar = ({ value, onChange }) => {
+export const SearchBar: FC<SearchBarProps> = ({ value, onChange }) => {
     return (
         <SearchInput
             type="search"

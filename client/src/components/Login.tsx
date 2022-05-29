@@ -1,5 +1,25 @@
-import React from "react";
+import React, { FC } from "react";
+import { IUser } from "../interfaces/Interfaces";
 import styled from "styled-components";
+
+interface LoginProps {
+    modalRef: () => void;
+    name: string | null;
+    username: string | null;
+    password: string | null;
+    handleChangeName: React.ChangeEventHandler<HTMLInputElement>;
+    handleChangeUsername: React.ChangeEventHandler<HTMLInputElement>;
+    handleChangePassword: React.ChangeEventHandler<HTMLInputElement>;
+    handleSignUp: React.FormEventHandler<HTMLFormElement>;
+    handleCloseModal: React.MouseEventHandler<HTMLButtonElement>;
+    handleLogin: React.FormEventHandler<HTMLFormElement>;
+    handleLogOut: React.FormEventHandler<HTMLFormElement>;
+    showSignUp: boolean;
+    setShowSignUp: React.Dispatch<React.SetStateAction<boolean>>;
+    passwordLengthError: boolean;
+    userExistsError: boolean;
+    invalidUserError: boolean;
+}
 
 const Modal = styled.div`
     position: fixed;
@@ -144,11 +164,11 @@ const CloseButton = styled.button`
     }
 `;
 
-export const Login = ({ modalRef, name, username, password, handleChangeName,
+export const Login: FC<LoginProps> = ({ modalRef, name, username, password, handleChangeName,
     handleChangeUsername, handleChangePassword, handleSignUp, handleCloseModal,
     handleLogin, handleLogOut, showSignUp, setShowSignUp, passwordLengthError,
     userExistsError, invalidUserError }) => {
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const loggedInUser: IUser[] = JSON.parse(localStorage.getItem("loggedInUser") || "[]");
 
     return (
         <Modal ref={modalRef}>

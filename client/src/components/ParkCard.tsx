@@ -1,10 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
 import { StateConverter } from "../utils/StateConverter";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+
+interface ParkCardProps {
+    id: string;
+    img: any;
+    fullName: string;
+    states: string;
+    designation: string;
+    description: string;
+    activities: string;
+    hours: string;
+    url: string;
+    weatherInfo: string;
+}
 
 const Overlay = styled.div`
     position: fixed;
@@ -286,27 +299,27 @@ const CloseButton = styled.button`
     }
 `;
 
-export const ParkCard = ({ id, img, fullName, states, designation, description, activities, hours,
+export const ParkCard: FC<ParkCardProps> = ({ id, img, fullName, states, designation, description, activities, hours,
     url, weatherInfo }) => {
     const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-    const [showDetails, setShowDetails] = useState(false);
-    const [saved, setSaved] = useState(false);
-    const [heartAnimation, setHeartAnimation] = useState(false);
-    const [loginReminder, setLoginReminder] = useState(false);
-    const [expandedActivities, setExpandedActivities] = useState(false);
-    const [expandedHours, setExpandedHours] = useState(false);
-    const [expandedWeather, setExpandedWeather] = useState(false);
+    const [showDetails, setShowDetails] = useState<boolean>(false);
+    const [saved, setSaved] = useState<boolean>(false);
+    const [heartAnimation, setHeartAnimation] = useState<boolean>(false);
+    const [loginReminder, setLoginReminder] = useState<boolean>(false);
+    const [expandedActivities, setExpandedActivities] = useState<boolean>(false);
+    const [expandedHours, setExpandedHours] = useState<boolean>(false);
+    const [expandedWeather, setExpandedWeather] = useState<boolean>(false);
 
     const modalRef = useRef();
 
     useEffect(() => {
-        if (loggedInUser && loggedInUser.user.parkId.find(parkId => parkId === id)) {
+        if (loggedInUser && loggedInUser.user.parkId.find((parkId: string) => parkId === id)) {
             setSaved(true);
         }
     }, []);
 
     useEffect(() => {
-        const handleClickOutside = (e) => {
+        const handleClickOutside = (e: any) => {
             if (modalRef.current && !modalRef.current.contains(e.target)) {
                 setShowDetails(false);
                 document.body.style.overflow = "visible";
@@ -325,19 +338,19 @@ export const ParkCard = ({ id, img, fullName, states, designation, description, 
         };
     }, []);
 
-    const handleShowDetails = () => {
+    const handleShowDetails = (): void => {
         setShowDetails(true);
         document.body.style.overflow = "hidden";
         document.getElementById("overlay").style.display = "block";
     };
 
-    const handleCloseDetails = () => {
+    const handleCloseDetails = (): void => {
         setShowDetails(false);
         document.body.style.overflow = "visible";
         document.getElementById("overlay").style.display = "none";
     };
 
-    const handleChangeHeart = () => {
+    const handleChangeHeart = (): void => {
         if (!loggedInUser) {
             setLoginReminder(true);
 
@@ -357,7 +370,7 @@ export const ParkCard = ({ id, img, fullName, states, designation, description, 
         }
     };
 
-    const stateName = states.split(",");
+    const stateName: string[] = states.split(",");
 
     return (
         <div>
@@ -442,6 +455,6 @@ export const ParkCard = ({ id, img, fullName, states, designation, description, 
                     <CloseButton type="button" onClick={handleCloseDetails}>Close</CloseButton>
                 </DetailsCard >
             }
-        </div >
+        </div>
     );
 };

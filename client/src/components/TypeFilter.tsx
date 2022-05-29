@@ -1,7 +1,12 @@
-import React from "react";
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import React, { FC } from "react";
+import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
-export const TypeFilter = ({ value, onChange }) => {
+interface TypeFilterProps {
+  value: string;
+  onChange: (e: SelectChangeEvent<string>, child: React.ReactNode) => void;
+}
+
+export const TypeFilter: FC<TypeFilterProps> = ({ value, onChange }) => {
   return (
     <FormControl
       sx={{

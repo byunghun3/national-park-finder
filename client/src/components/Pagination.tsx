@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 
+interface PaginationProps {
+    parksPerPage: number;
+    totalParks: number;
+    handleChangePage: (number: number) => void;
+    currentPage: number;
+}
 const PageNumbers = styled.div`
     display: flex;
     justify-content: center;
@@ -44,30 +50,30 @@ const PageButton = styled.button`
     }
 `;
 
-export const Pagination = ({ parksPerPage, totalParks, handleChangePage, currentPage }) => {
-    const [minPageNumber, setMinPageNumber] = useState(1);
-    const [maxPageNumber, setMaxPageNumber] = useState(10);
-    const pageNumbers = [];
+export const Pagination: FC<PaginationProps> = ({ parksPerPage, totalParks, handleChangePage, currentPage }) => {
+    const [minPageNumber, setMinPageNumber] = useState<number>(1);
+    const [maxPageNumber, setMaxPageNumber] = useState<number>(10);
+    const pageNumbers: number[] = [];
 
     for (let i = 1; i <= Math.ceil(totalParks / parksPerPage); i++) {
         pageNumbers.push(i);
     }
 
-    const handleShowMorePages = () => {
+    const handleShowMorePages = (): void => {
         if (maxPageNumber !== pageNumbers.length) {
             setMinPageNumber(prev => prev + 10);
             setMaxPageNumber(prev => prev + 10);
         }
     };
 
-    const handleShowPrevPages = () => {
+    const handleShowPrevPages = (): void => {
         if (minPageNumber !== 0) {
             setMinPageNumber(prev => prev - 10);
             setMaxPageNumber(prev => prev - 10);
         }
     };
 
-    const pages = pageNumbers.map((number, i) => {
+    const pages = pageNumbers.map((number: number, i: number) => {
         if (number >= minPageNumber && number <= maxPageNumber) {
             if (currentPage === (i + 1)) {
                 return <BoldNumber key={number} onClick={() => { handleChangePage(number); }}>
@@ -94,6 +100,6 @@ export const Pagination = ({ parksPerPage, totalParks, handleChangePage, current
                     Next
                 </PageButton>
             }
-        </PageNumbers >
+        </PageNumbers>
     );
 };

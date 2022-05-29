@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { FC, useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Login } from "./components/Login";
 import { ParkCard } from "./components/ParkCard";
 import { SearchFilters } from "./components/SearchFilters";
 import { Pagination } from "./components/Pagination";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { IUser } from "./interfaces/Interfaces";
 import styled, { keyframes } from "styled-components";
 import "./App.css";
 
@@ -144,7 +145,6 @@ const ParkSection = styled.div`
 const ParkQtyText = styled.div`
   display: flex;
   justify-content: center;
-  // margin-top: 2%;
   margin: 2rem 0;
   font-size: 1.8rem;
 `;
@@ -206,25 +206,25 @@ const PageSection = styled.div`
   flex: 1;
 `;
 
-function App() {
+function App(): FC {
   const [npsData, setNpsData] = useState([]);
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
-  const [passwordLengthError, setPasswordLengthError] = useState(false);
-  const [userExistsError, setUserExistsError] = useState(false);
-  const [invalidUserError, setInvalidUserError] = useState(false);
-  const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem("loggedInUser")));
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [searchValue, setSearchValue] = useState("");
-  const [stateValue, setStateValue] = useState("");
-  const [typeValue, setTypeValue] = useState("");
-  const [activityValue, setActivityValue] = useState("");
-  const [isInputChecked, setIsInputChecked] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [parksPerPage] = useState(18);
+  const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
+  const [showSignUp, setShowSignUp] = useState<boolean>(false);
+  const [passwordLengthError, setPasswordLengthError] = useState<boolean>(false);
+  const [userExistsError, setUserExistsError] = useState<boolean>(false);
+  const [invalidUserError, setInvalidUserError] = useState<boolean>(false);
+  const [loggedInUser, setLoggedInUser] = useState<IUser[]>(JSON.parse(localStorage.getItem("loggedInUser")) || "[]");
+  const [name, setName] = useState<string | null>("");
+  const [username, setUsername] = useState<string | null>("");
+  const [password, setPassword] = useState<string | null>("");
+  const [searchValue, setSearchValue] = useState<string>("");
+  const [stateValue, setStateValue] = useState<string>("");
+  const [typeValue, setTypeValue] = useState<string>("");
+  const [activityValue, setActivityValue] = useState<string>("");
+  const [isInputChecked, setIsInputChecked] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [parksPerPage] = useState<number>(18);
 
   const modalRef = useRef();
 
