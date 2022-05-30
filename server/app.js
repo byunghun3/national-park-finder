@@ -9,7 +9,8 @@ dotenv.config();
 app.use(express.json());
 
 const corsOptions = {
-    allowedHeaders: ["Content-Type", "authorization"]
+    allowedHeaders: ["Content-Type", "authorization"],
+    origin: ["https://byunghun3.github.io/national-park-finder/"]
 };
 app.use(cors(corsOptions));
 
