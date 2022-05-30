@@ -8,6 +8,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import styled, { keyframes } from "styled-components";
 import "./App.css";
 
+const { REACT_APP_DEV_API, REACT_APP_PROD_API } = process.env;
+
 const API = {
   key: "NKmI0DYhskYfr2b0VtZJGUgjOwaubn9G3R1GlWPC",
   url: "https://developer.nps.gov/api/v1/parks?limit=466&api_key="
@@ -255,7 +257,7 @@ function App() {
 
   useEffect(() => {
     if (loggedInUser) {
-      axios.get(`http://localhost:8000/users/${loggedInUser.user._id}`, {
+      axios.get(`${REACT_APP_PROD_API}/${loggedInUser.user._id}`, {
         headers: {
           "authorization": "Bearer " + loggedInUser.accessToken
         }
@@ -281,7 +283,7 @@ function App() {
     setPasswordLengthError(false);
     setUserExistsError(false);
 
-    axios.post("http://localhost:8000/users/signup", {
+    axios.post(`${REACT_APP_PROD_API}/users/signup`, {
       name: name,
       username: username,
       password: password
@@ -304,7 +306,7 @@ function App() {
     e.preventDefault();
     setInvalidUserError(false);
 
-    axios.post("http://localhost:8000/users/login", {
+    axios.post(`${REACT_APP_PROD_API}/users/login`, {
       username: username,
       password: password
     }).then((res) => {
@@ -327,7 +329,7 @@ function App() {
   const handleLogOut = (e) => {
     e.preventDefault();
 
-    axios.delete("http://localhost:8000/users/login", {
+    axios.delete(`${REACT_APP_PROD_API}/users/login`, {
       username: loggedInUser.user.username
     }).then((res) => {
       localStorage.removeItem("loggedInUser");
@@ -419,7 +421,7 @@ function App() {
     });
 
     if (loggedInUser) {
-      axios.patch(`http://localhost:8000/users/${loggedInUser.user._id}/${park.id}`, {
+      axios.patch(`${REACT_APP_PROD_API}/${loggedInUser.user._id}/${park.id}`, {
         parkId: park.id
       }, {
         headers: {
