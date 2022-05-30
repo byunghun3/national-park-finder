@@ -7,7 +7,6 @@ const cors = require("cors");
 dotenv.config();
 
 app.use(express.json());
-app.use(cors());
 
 const usersRouter = require("./routes/users");
 
@@ -18,6 +17,8 @@ app.use(function (req, res, next) {
     res.setHeader("Access-Control-Allow-Credentials", true);
     next();
 });
+
+app.use(cors());
 
 app.use("/users", usersRouter);
 
