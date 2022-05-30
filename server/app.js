@@ -11,6 +11,12 @@ app.use(cors());
 
 const usersRouter = require("./routes/users");
 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://byunghun3.github.io/national-park-finder/");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.use("/users", usersRouter);
 
 mongoose.connect(process.env.DB_URI);
