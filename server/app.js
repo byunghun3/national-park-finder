@@ -8,6 +8,11 @@ dotenv.config();
 
 app.use(express.json());
 
+const corsOptions = {
+    allowedHeaders: ["Content-Type", "authorization"]
+};
+app.use(cors(corsOptions));
+
 const usersRouter = require("./routes/users");
 
 app.use(function (req, res, next) {
@@ -17,8 +22,6 @@ app.use(function (req, res, next) {
     res.setHeader("Access-Control-Allow-Credentials", true);
     next();
 });
-
-app.use(cors());
 
 app.use("/users", usersRouter);
 
