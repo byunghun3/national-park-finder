@@ -262,7 +262,7 @@ function App() {
           "authorization": "Bearer " + loggedInUser.accessToken
         }
       });
-    }
+    } else { return null; }
     setName("");
   }, [loggedInUser]);
 
