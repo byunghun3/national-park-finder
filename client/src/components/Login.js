@@ -33,6 +33,10 @@ const LogOutForm = styled.form`
     align-items: center;
     height: 100%;
     font-size: 1.8rem;
+
+    @media (max-width: 499px) {
+        width: 90%;
+    }
 `;
 
 const Label = styled.span`
